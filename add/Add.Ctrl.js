@@ -6,7 +6,7 @@
         .controller('Add.Ctrl', AddCtrl)
 
     /** @ngInject */
-    function AddCtrl($scope, WebApi, $stateParams) {
+    function AddCtrl($scope, WebApi, $stateParams, $timeout) {
         var foundTrain = {};
         var loadData = function () {
             foundTrain = WebApi.findBy($stateParams.id);
@@ -17,13 +17,17 @@
 
 
         $scope.addCar = function () {
-            $scope.message = '';
+
             foundTrain.railcars.push($scope.car);
             WebApi.update(foundTrain);
             $scope.car = {};
             loadData();
             if (foundTrain.railcars.length > 0) {
                 $scope.message = 'Car Added';
+                $timeout(function () {
+                    $scope.message = '';
+                }, 800);
+
             }
         }
 

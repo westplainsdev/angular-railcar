@@ -7,6 +7,9 @@
 
     /** @ngInject */
     function WebApi() {
+        // static collection. This could be extracted out
+        // into a $http.get call from an api end point or a static 
+        // json file.
         var trainCollection = [{
             id: 100,
             routeName: 'Northwest',
@@ -27,12 +30,14 @@
             railcars: []
         }];
 
-
+        // these function do not have to be here, they can be define above
+        // and referenced here like this: `List: list`
         return {
             list: function () {
                 return trainCollection;
             },
             findBy: function (id) {
+                // using the built in array filter function 
                 var train = trainCollection.filter(function (obj) {
                     return obj.id == id
                 });
@@ -43,8 +48,6 @@
                 trainCollection[foundIndex] = updatedTrain;
             }
         }
-
-
     }
 
 }());

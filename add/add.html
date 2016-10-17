@@ -1,20 +1,26 @@
-<h1>{{title}}</h1>
-<p><a ui-sref="details({id: train.id})">Back to Train Details</a></p>
-
+<p></p>
 <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{title}}</h3>
+  </div>
   <div class="panel-body">
-   <p><label>Rail car number</label> <input type="text" ng-model="car.number" /></p>
-    <p><label>Rail car type</label> <select ng-model="car.type">
+   	<p><label>Rail car number</label> <input type="text" ng-model="car.number" /></p>
+		<p><label>Rail car type</label> <select ng-model="car.type">
         <option>Hooper</option>
         <option>Tanker</option>
         <option>Box Car</option>
     </select>
-    </p>
-    <p><label>Description</label><br />
-    <textarea rows="5" cols="60" ng-model="car.description"></textarea>
-    </p>
-    <p><button ng-click="addCar()" class="btn btn-primary">Add Car</button></p>
+		</p>
+		<p><label>Description</label><br />
+			<textarea rows="5" cols="60" ng-model="car.description"></textarea>
+		</p>
+		<p><button ng-click="addCar()" class="btn btn-primary">Add Car</button></p>
   </div>
 </div>
 
-<p class="text-info bg-info">{{message}}</p>
+<p><a ui-sref="details({id: train.id})">Back to Train Details</a></p>
+
+<div ng-show="message" class="alert alert-success" role="alert">{{message}}</div>
+
+
+

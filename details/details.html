@@ -5,22 +5,30 @@
 
 </p>
 
-<div class="panel panel-default" ng-hide="train.railcars.length > 0">
-  <div class="panel-heading">
-    <h3 class="panel-title text-warning bg-warning">No cars currently with this train</h3>
-  </div>
-  <div class="panel-body">
-   <p> <a ui-sref="add({id: train.id})" class="btn btn-primary">Add Railcars</a> </p>
-  </div>
+<div class="panel panel-warning" ng-hide="train.railcars.length > 0">
+	<div class="panel-heading">
+		<h3 class="panel-title">No cars currently with this train</h3>
+	</div>
+	<div class="panel-body">
+		<p> <a ui-sref="add({id: train.id})" class="btn btn-primary">Add Railcars</a> </p>
+	</div>
 </div>
 
-
-        
-
-<ul ng-show="train.railcars.length">
-	<li ng-repeat="car in train.railcars">
-        {{car.number}} {{car.type}} {{car.description}}
-    </li>
-</ul>
+<table class="table table-bordered table-striped table-condensed" ng-show="train.railcars.length">
+	<thead>
+		<tr>
+			<th>Car Number</th>
+			<th>Car Type</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="car in train.railcars" >
+			<td>{{car.number}}</td>
+			<td>{{car.type}}</td>
+			<td>{{car.description}}</td>
+		</tr>
+	</tbody>
+</table>
 
 <p ng-show="train.railcars.length"> <a ui-sref="add({id: train.id})" class="btn btn-primary">Add Railcars</a> </p>

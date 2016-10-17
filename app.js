@@ -4,9 +4,8 @@
     function ConfigConfig($stateProvider, $urlRouterProvider){
           $urlRouterProvider.otherwise('/summary');
 
+          // define application routes here
     $stateProvider
-
-        // HOME STATES AND NESTED VIEWS ========================================
          .state('summary', {
             url: '/summary',
             templateUrl: './summary/summary.html',           
@@ -19,7 +18,7 @@
             controller: 'Details.Ctrl'
         })
         
-            .state('add', {
+        .state('add', {
             url: '/add/:id',
             templateUrl: './add/add.html',           
             controller: 'Add.Ctrl'

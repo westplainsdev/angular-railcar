@@ -1,4 +1,4 @@
-(function(){
+(function () {
     'use strict';
 
     angular
@@ -6,10 +6,10 @@
         .controller('Details.Ctrl', DetailsCtrl)
 
     /** @ngInject */
-    function DetailsCtrl($scope, WebApi, $stateParams){
-       $scope.title = 'Train Details Page';
-       var foundTrain = WebApi.findBy($stateParams.id);
-       $scope.train = foundTrain;
+    function DetailsCtrl($scope, WebApi, $stateParams) {
+        $scope.title = 'Train Details Page';
+        var foundTrain = WebApi.findBy($stateParams.id);
+        $scope.train = foundTrain;
     }
 
 }());
