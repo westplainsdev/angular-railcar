@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+
+<div class="panel panel-default" ng-repeat="train in trainCollection">
+  <div class="panel-heading">
+    <h3 class="panel-title" ng-bind-template="{{train.routeName}} route"></h3>
+  </div>
+  <div class="panel-body">
+   <p> <a ui-sref="details({id: train.id})">View Train Details</a> | <a ui-sref="add({id: train.id})">Add Railcars</a> 
+  </div>
+</div>

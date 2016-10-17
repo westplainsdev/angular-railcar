@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<h3 ng-bind-template="{{train.routeName}} train route"></h3>
+<p>
+	<label>Origin:</label> {{train.origin}} <label>Destination:</label> {{train.destination}}
+
+</p>
+
+<div class="panel panel-default" ng-hide="train.railcars.length > 0">
+  <div class="panel-heading">
+    <h3 class="panel-title text-warning bg-warning">No cars currently with this train</h3>
+  </div>
+  <div class="panel-body">
+   <p> <a ui-sref="add({id: train.id})" class="btn btn-primary">Add Railcars</a> </p>
+  </div>
+</div>
+
+
+        
+
+<ul ng-show="train.railcars.length">
+	<li ng-repeat="car in train.railcars">
+        {{car.number}} {{car.type}} {{car.description}}
+    </li>
+</ul>
+
+<p ng-show="train.railcars.length"> <a ui-sref="add({id: train.id})" class="btn btn-primary">Add Railcars</a> </p>
