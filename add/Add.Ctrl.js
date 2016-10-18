@@ -14,10 +14,7 @@
             $scope.title = 'Add railcar to ' + foundTrain.routeName + ' train';
         };
 
-
-
         $scope.addCar = function () {
-
             foundTrain.railcars.push($scope.car);
             WebApi.update(foundTrain);
             $scope.car = {};
@@ -31,7 +28,8 @@
             }
         }
 
-
+        // make sure to call this function 
+        // the first time load of the page
         loadData();
     }
 

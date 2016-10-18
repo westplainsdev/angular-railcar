@@ -10,7 +10,6 @@
         $scope.title = 'Active Train Summary Page';
         var trainCollection = WebApi.list();
         $scope.trainCollection = trainCollection;
-
     }
 
 }());
